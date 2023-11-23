@@ -22,13 +22,25 @@ nav{
     flex-direction: column;
 }
 .routes a{
+    display: flex;
     font-size: 1.8rem;
-    margin: 20px 40px;
-    transition: transform 0.2s;
+    padding: 0 40px;
+    transition: transform .4s ,color .4s;
     font-weight: 500;
+    height: 100px;
+    align-items: center;
+    width: 100%;
+
 }
 .routes a:hover{
-    transform: translateX(2.2);
+    transform: scaleX(1.05);
+    background: linear-gradient(to right,
+    rgba(44, 44, 44, 0.962),
+    rgba(44, 44, 44, 0.632),
+    rgba(44, 44, 44, 0.357),
+    rgba(44, 44, 44, 0.237), 
+    rgba(44, 44, 44, 0)
+    );
 }
 .active {
     text-shadow: 4px 4px 5px black;

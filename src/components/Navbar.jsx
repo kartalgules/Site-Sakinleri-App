@@ -8,11 +8,11 @@ function Navbar() {
   return (
     <nav>
       <div className={style.userDetail}>
-        <h3>User Full Name</h3>
-        <p>Sakin Sayısı :</p>
+        <h3>Örnek Sitesi</h3>
+        <p>Sakin Sayısı : 2500 Kişi</p>
       </div>
       <div className={style.routes}>
-        <NavLink exact to="/">Home</NavLink>
+        <NavLink exact to="/">Anasayfa</NavLink>
         <NavLink to="/list">Sakin Listesi</NavLink>
         <NavLink to="/add">Sakin Ekle</NavLink>
         <NavLink to="/excelAdd">Excel Sakin Ekle</NavLink>
