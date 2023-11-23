@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+}
+.article {
+    display: flex;
+    width: 75%;
+    margin: 2% 5% 0 5%;
+}
