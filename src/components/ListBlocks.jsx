@@ -7,13 +7,16 @@ function ListBlocks() {
   const uniqueBlocks = [...new Set(data.map((item) => item.blok))];
   console.log(uniqueBlocks);
   return (
-    <>
-      {uniqueBlocks.map((block, i) => (
-        <button key={i}>
-          {block}
-        </button>
-      ))}
-    </>
+    <section>
+      <h2>Bina Seçin :</h2>
+      <select>
+        {uniqueBlocks.map((block, i) => (
+          <option name={block} key={i}>
+            {block}
+          </option>
+        ))}
+      </select>
+    </section>
   );
 }
 

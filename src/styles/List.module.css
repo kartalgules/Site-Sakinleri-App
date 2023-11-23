@@ -1,7 +1,27 @@
 .container {
     display: flex;
+    flex-direction: column;
+    width: 100%;
 }
-button {
+section {
+    display: flex;
+}
+section > h2 {
+    margin-right: 10px;
+}
+select{
+    display: flex;
+    width: 70px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50px;
+    border: none;
+    background-color: rgba(57, 57, 57, 0.962);
+    color: white;
+}
+/* button {
     display: flex;
     height: 40px;
     width: 70px;
@@ -11,14 +31,46 @@ button {
     justify-content: center;
     font-weight: 600;
     font-size: 16px;
-}
-/* 
+} */
 .detail {
-    background-color: blue;
+    display: flex;
+    height: 100%;
+    margin-top: 20px;
+    width: 100%;
 }
-.apartment {
-    background-color: blueviolet;
+.apartment , .seated {
+    height: 100%;
 }
 .seated {
-    background-color: brown;
-} */
+    width: 100%;
+}
+.apartment > p {
+    width: 100%;
+    background-color: rgba(57, 57, 57, 0.962);
+    justify-content: center;
+}
+.seated > p {
+    padding-left: 20px;
+    margin-left: 30px;
+    width: 25%;
+    justify-content: center;
+}
+.seated > p , .apartment > p {
+    display: flex;
+    height: 40px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    background-color: rgba(57, 57, 57, 0.962);
+    align-items: center;
+    color: white;
+}
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.seated > h2 {
+    width: 20%;
+    margin-left: 75px;
+}
