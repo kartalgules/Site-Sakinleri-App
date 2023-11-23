@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-export const List = () => {
+function List() {
   return <div>List</div>;
-};
+}
+
+export default List;
+

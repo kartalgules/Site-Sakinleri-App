@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-export const Add = () => {
+function Add() {
   return <div>Add</div>;
-};
+}
+
+export default Add;
+

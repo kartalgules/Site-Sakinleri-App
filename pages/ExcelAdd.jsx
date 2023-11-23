@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-export const ExcelAdd = () => {
+function ExcelAdd() {
   return <div>ExcelAdd</div>;
-};
+}
+
+export default ExcelAdd;

@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-export const BulkDelete = () => {
+function BulkDelete() {
   return <div>BulkDelete</div>;
-};
+}
+
+export default BulkDelete;
+
