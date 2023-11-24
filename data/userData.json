@@ -1,5 +1,4 @@
 [
-    {"apartment": 1, "blok": "A", "fullName" : "John Doe" , "email": "johndoe@gmail.com", "age": 32, "gender": "male", "profile_image_url": "https://randomuser.me/api/portraits/men/1.jpg"},
     {"apartment": 2, "blok": "A", "fullName" : "Brian Sully" , "email": "briansullly@gmail.com", "age": 28, "gender": "female", "profile_image_url": "https://randomuser.me/api/portraits/women/2.jpg"},
     {"apartment": 3, "blok": "A", "fullName" : "Bob Smith" , "email": "bobsmith@gmail.com", "age": 45, "gender": "male", "profile_image_url": "https://randomuser.me/api/portraits/men/3.jpg"},
     {"apartment": 4, "blok": "A", "fullName" : "Alice Smith" , "email": "alicesmith@gmail.com", "age": 38, "gender": "female", "profile_image_url": "https://randomuser.me/api/portraits/women/4.jpg"},

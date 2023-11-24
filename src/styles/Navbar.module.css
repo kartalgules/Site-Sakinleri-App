@@ -44,7 +44,3 @@ nav{
     );
     text-shadow: 4px -4px 3px black;
 }
-.active {
-    text-shadow: 4px 4px 5px black;
-    color: red;
-}
