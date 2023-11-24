@@ -4,10 +4,11 @@ nav{
     height: 100vh;
     width: 15%;
     background: linear-gradient(to right,
-    rgba(57, 57, 57, 0.962),
-    rgba(57, 57, 57, 0.632),
-    rgba(57, 57, 57, 0.357),
-    rgba(57, 57, 57, 0.237), 
+    rgba(100, 100, 100, 0.900),
+    rgba(57, 57, 57, 0.600),
+    rgba(57, 57, 57, 0.400),
+    rgba(57, 57, 57, 0.300),
+    rgba(57, 57, 57, 0.200), 
     rgba(128, 128, 128, 0));
 }
 .userDetail{
@@ -25,15 +26,15 @@ nav{
     display: flex;
     font-size: 1.8rem;
     padding: 0 40px;
-    transition: transform .4s ,color .4s;
-    font-weight: 500;
+    transition: transform .5s ,color .9s, text-shadow .5s;
+    font-weight: 600;
     height: 100px;
     align-items: center;
     width: 100%;
-
+    color : white;
 }
 .routes a:hover{
-    transform: scaleX(1.05);
+    transform: scaleX(1.07);
     background: linear-gradient(to right,
     rgba(44, 44, 44, 0.962),
     rgba(44, 44, 44, 0.632),
@@ -41,6 +42,7 @@ nav{
     rgba(44, 44, 44, 0.237), 
     rgba(44, 44, 44, 0)
     );
+    text-shadow: 4px -4px 3px black;
 }
 .active {
     text-shadow: 4px 4px 5px black;

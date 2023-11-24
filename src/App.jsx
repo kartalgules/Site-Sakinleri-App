@@ -20,7 +20,7 @@ function App() {
       <Navbar />
       <div className={style.article}>
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" exact="true" element={<Home />} />
           <Route path="/list" element={<List />} />
           <Route path="/add" element={<Add />} />
           <Route path="/excelAdd" element={<ExcelAdd />} />
