@@ -4,21 +4,24 @@ import style from "../styles/List.module.css";
 import data from "../../data/userData.json";
 
 function ListApartment() {
-//  Seleck Key State
-  const [selectedItemKey, setSelectedItemKey] = useState(null);
-//    Select Key Function
+  //    *****FUNCTİONS*****
+  
+  //    Select Key Function
   const handleItemClick = (key) => {
     setSelectedItemKey(key);
   };
-//    Block Key Function
-    const handleBlockChange = (e) => {
-      setSelectedBlockKey(e.target.value);
-    };
-//    Unic Bloks
+  //    Block Key Function
+  const handleBlockChange = (e) => {
+    setSelectedBlockKey(e.target.value);
+  };
+  
+  //    Unic Bloks
   const uniqueBlocks = [...new Set(data.map((item) => item.blok))];
-//    Select Block Key State
+  //  Seleck Key State
+  const [selectedItemKey, setSelectedItemKey] = useState(null);
+  //    Select Block Key State
   const [selectedBlockKey, setSelectedBlockKey] = useState("");
-//    Selected Blok List
+  //    Selected Blok List
   const filterBloks = data.filter((item) => item.blok === selectedBlockKey);
 
   return (

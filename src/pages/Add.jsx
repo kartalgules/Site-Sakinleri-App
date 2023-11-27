@@ -2,7 +2,12 @@
 import React from "react";
 
 function Add() {
-  return <div>Add</div>;
+
+  return (
+    <div>
+      <h1>Sakin Ekle</h1>
+    </div>
+  )
 }
 
 export default Add;
