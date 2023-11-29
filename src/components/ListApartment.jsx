@@ -27,7 +27,7 @@ function ListApartment() {
   return (
     <>
       <div className={style.select}>
-        <h2>Binalar</h2>
+        <h2>Blok</h2>
         <select onChange={handleBlockChange}>
           <option value="" disabled selected>Seçiniz</option>
           {uniqueBlocks.map((block, i) => (
