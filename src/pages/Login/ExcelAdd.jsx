@@ -6,8 +6,8 @@
 import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import * as XLSX from "xlsx";
-import userData from "../../data/userData.json";
-import style from '../styles/ExcelAdd.module.css'
+import userData from "../../../data/userData.json";
+import style from "../../styles/ExcelAdd.module.css";
 
 function ExcelAdd() {
   const onDrop = useCallback((acceptedFiles) => {
