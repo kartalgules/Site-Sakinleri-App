@@ -9,14 +9,20 @@ function Login() {
   const [loginCheck, setLoginCheck] = useState("");
   const cheking = () => {
     setLoginCheck(
-      <p>{isLogin ? "Giriş Başarılı" : "Giriş Başarısız.Tekrar Deneyin"}</p>
-    );
+      isLogin ? <p style={{color : "green"}}>Giriş Başarılı</p> : <p style={{color:"red"}}>Giriş Başarısız.Tekrar Deneyin</p>
+      );
   };
 
   const onFinish = (values) => {
     localStorage.setItem("username", JSON.stringify(values.username));
     localStorage.setItem("password", JSON.stringify(values.password));
-    values.username == userData[0].username &&
+    // const ok = userData.find((i)=>{
+    //   i.username == values.username && i.password == values.password
+    // })
+    // console.log(ok)
+    // console.log(values.username)
+    // console.log(values.password)
+    values.username === userData[0].username &&
     values.password == userData[0].password
       ? (isLogin = true)
       : null;

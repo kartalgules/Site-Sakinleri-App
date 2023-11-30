@@ -34,3 +34,7 @@
     border-radius: 5px;
     box-shadow: 4px 5px 7px 0px rgba(0,0,0,0.53);
 }
+.login_form  p {
+    margin-top: 10px;
+    font-weight: 600;
+}
