@@ -4,9 +4,12 @@ import style from "../../styles/LogoutHomeMain.module.css";
 import { NavLink } from "react-router-dom";
 
 function Main() {
-    const pageDown = () => {
-
-    }
+  window.addEventListener("scroll", function () {
+    let header = document.getElementsByClassName("_header_mf601_9");
+    header.style.display.toggle("none", window.scrollY > 0)
+    console.log(header)
+  });
+  const pageDown = () => {};
   return (
     <div className={style.home_main}>
       <div className={style.header}>
@@ -14,6 +17,7 @@ function Main() {
           <img src="../../../public/Logo.png" alt="logo" />
         </div>
         <div className={style.login}>
+          <NavLink to="/singin">Üye Ol</NavLink>
           <NavLink to="/login">Giriş Yap</NavLink>
         </div>
       </div>
@@ -32,7 +36,9 @@ function Main() {
           </p>
         </div>
         <div className={style.scroll_button}>
-            <NavLink to="/description" ><i class="fa-solid fa-circle-down" onClick={pageDown}></i></NavLink>
+          <NavLink to="/description">
+            <i class="fa-solid fa-circle-down" onClick={pageDown}></i>
+          </NavLink>
         </div>
       </div>
     </div>

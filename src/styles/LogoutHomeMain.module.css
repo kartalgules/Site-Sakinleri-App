@@ -12,7 +12,7 @@
     position: fixed;
     left: 5%;
     right: 5%;
-    z-index: 1;    
+    z-index: 20;    
 }
 .logo {
     display: flex;
@@ -33,7 +33,8 @@
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
-    text-shadow: 2px 3px 5px white; 
+    text-shadow: 2px 3px 5px white;
+    margin-left: 30px; 
 }
 .section {
     height: 95%;
@@ -48,9 +49,8 @@
     margin: auto;
     height: 10%;
     width: 80%;
-    bottom: 10%;
+    bottom: 13%;
     left: 10%;
-
 }
 .description p {
     font-size: 27px;
@@ -63,26 +63,22 @@
     object-fit: cover;
     position: fixed;
     z-index: -1;
-    opacity: 65%;
+    opacity: 55%;
 }
 .scroll_button {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     left: 50%;
-    animation: lookOut 1.5s infinite ease-out;
-    transition: keyframes 2s;
+    background-color: aliceblue;
+    border-radius: 50%;
+    animation: lookOut 2s infinite ease-in-out;
 }
 .scroll_button > a > i {
     font-size: 40px;
-    text-shadow: 2px 3px 5px white; 
-    cursor: pointer;
 }
 @keyframes lookOut {
-    0% {
-        
-        /* bottom: 15px */
+    60% {
+        bottom: 40px
     }
-    100% {
-        /* bottom: 0 */
-    }
+    
 }
