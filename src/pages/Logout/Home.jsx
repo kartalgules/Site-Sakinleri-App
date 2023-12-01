@@ -1,13 +1,14 @@
-import { NavLink } from "react-router-dom";
-import style from '../../styles/Logout_Home.module.css'
+// import Desciprions from "./Desciprions";
+import Main from "./Main";
+
 
 function Home() {
   return (
-    <div className={style.Home_container}>
-      <NavLink to={"/login"}>Giriş Yap</NavLink>
-
-    </div>
-  )
+    <>
+      <Main />
+      {/* <Desciprions /> */}
+    </>
+  );
 }
 
 export default Home;
