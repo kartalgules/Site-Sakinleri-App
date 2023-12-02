@@ -5,6 +5,7 @@ import { Form, Input, Button } from "antd";
 import userData from "../../../data/users.json";
 
 function Login() {
+
   let isLogin = false;
   const [loginCheck, setLoginCheck] = useState("");
   const cheking = () => {
@@ -16,18 +17,13 @@ function Login() {
   const onFinish = (values) => {
     localStorage.setItem("username", JSON.stringify(values.username));
     localStorage.setItem("password", JSON.stringify(values.password));
-    // const ok = userData.find((i)=>{
-    //   i.username == values.username && i.password == values.password
-    // })
-    // console.log(ok)
-    // console.log(values.username)
-    // console.log(values.password)
     values.username === userData[0].username &&
     values.password == userData[0].password
       ? (isLogin = true)
       : null;
     cheking();
   };
+  
   return (
     <div className={style.login_container}>
       <div className={style.login_form}>

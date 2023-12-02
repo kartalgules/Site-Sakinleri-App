@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Home from "./pages/Logout/Home";
+import {LoginProvider} from "./context/LoginContext";
+import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 
 function App() {
   return (
-    <>
-      <Home />
-    </>
+    <LoginProvider>
+      <Logout />
+      <Login />
+    </LoginProvider>
   );
 }
 
