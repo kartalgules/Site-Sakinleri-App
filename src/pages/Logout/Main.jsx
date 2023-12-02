@@ -1,15 +1,9 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/no-unescaped-entities */
-import style from "../../styles/LogoutHomeMain.module.css";
 import { NavLink } from "react-router-dom";
+import style from "../../styles/LogoutHomeMain.module.css";
 
 function Main() {
-  window.addEventListener("scroll", function () {
-    let header = document.getElementsByClassName("_header_mf601_9");
-    header.style.display.toggle("none", window.scrollY > 0)
-    console.log(header)
-  });
-  const pageDown = () => {};
   return (
     <div className={style.home_main}>
       <div className={style.header}>
@@ -37,7 +31,7 @@ function Main() {
         </div>
         <div className={style.scroll_button}>
           <NavLink to="/description">
-            <i class="fa-solid fa-circle-down" onClick={pageDown}></i>
+            <i class="fa-solid fa-circle-down"></i>
           </NavLink>
         </div>
       </div>

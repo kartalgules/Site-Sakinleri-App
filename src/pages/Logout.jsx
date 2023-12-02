@@ -1,14 +1,17 @@
-import Login from "./Logout/Login";
 import Home from "./Logout/Home";
-import Descriptions from "./Logout/Desciprions";
+// import Descriptions from "./Logout/Desciprions";
+
+import {useContext} from "react";
+import LoginContext from "../context/LoginContext";
+import { Route, Routes } from "react-router-dom";
 
 function Logout() {
+  const data = useContext(LoginContext)
+
   return (
-    <>
-      <Login />
-      <Home />
-      <Descriptions />
-    </>
+    <Routes>
+      <Route path="/" exact="true" component={<Home data={data} />}/>
+    </Routes>
   )
 }
 

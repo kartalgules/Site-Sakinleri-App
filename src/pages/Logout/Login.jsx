@@ -1,16 +1,17 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import LoginContext from "../../context/LoginContext";
 import style from "../../styles/Login.module.css";
-import { Form, Input, Button } from "antd";
 import userData from "../../../data/users.json";
+import { Form, Input, Button } from "antd";
 
 function Login() {
-
-  let isLogin = false;
+  const data = useContext(LoginContext);
+  
   const [loginCheck, setLoginCheck] = useState("");
   const cheking = () => {
     setLoginCheck(
-      isLogin ? <p style={{color : "green"}}>Giriş Başarılı</p> : <p style={{color:"red"}}>Giriş Başarısız.Tekrar Deneyin</p>
+      data.login ? <p style={{color : "green"}}>Giriş Başarılı</p> : <p style={{color:"red"}}>Giriş Başarısız.Tekrar Deneyin</p>
       );
   };
 
@@ -19,7 +20,7 @@ function Login() {
     localStorage.setItem("password", JSON.stringify(values.password));
     values.username === userData[0].username &&
     values.password == userData[0].password
-      ? (isLogin = true)
+      ? (data.login = true)
       : null;
     cheking();
   };

@@ -5,7 +5,7 @@ import { createContext, useState } from "react";
 const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState('false');
 
   const values = {
     login,
@@ -15,3 +15,5 @@ export const LoginProvider = ({ children }) => {
     <LoginContext.Provider value={values}>{children}</LoginContext.Provider>
   );
 };
+
+export default LoginContext;
