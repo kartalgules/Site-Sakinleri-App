@@ -19,7 +19,7 @@ function Login() {
       <Route path="/edit" element={<Edit />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/logout" element={<Logout />} />
-    </Routes>
+    </Routes> 
   );
 }
 

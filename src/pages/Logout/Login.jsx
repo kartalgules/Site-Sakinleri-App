@@ -11,8 +11,11 @@ function Login() {
   const [loginCheck, setLoginCheck] = useState("");
   const cheking = () => {
     setLoginCheck(
-      data.login ? <p style={{color : "green"}}>Giriş Başarılı</p> : <p style={{color:"red"}}>Giriş Başarısız.Tekrar Deneyin</p>
+      data.login ? <p style={{color : "green"}}>Giriş Başarılı <br />Yönlendiriliyorsunuz..</p> : <p style={{color:"red"}}>Giriş Başarısız.Tekrar Deneyin</p>
       );
+      setTimeout(()=>{
+        data.login && data.setLogin(true);
+      },2000)
   };
 
   const onFinish = (values) => {
