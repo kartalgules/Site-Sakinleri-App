@@ -5,13 +5,9 @@ import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 
 function App() {
-  const data = useContext(LoginContext)
-  console.log(data.login)
-  return (
-    <>
-      {data.login ? <Login /> : <Logout />}
-    </>
-  );
+  const data = useContext(LoginContext);
+
+  return <>{data.login ? <Login /> : <Logout />}</>;
 }
 
 export default App;

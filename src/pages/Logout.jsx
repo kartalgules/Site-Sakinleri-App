@@ -1,3 +1,4 @@
+import BadRequest from "./BadRequest";
 import Home from "./Logout/Home";
 import Login from "./Logout/Login";
 import Singin from "./Logout/Singin";
@@ -7,9 +8,10 @@ function Logout() {
 
   return (
     <Routes>
-      <Route path="/main" element={<Home />}/>
+      <Route path="/" exact="true"  element={<Home />}/>
       <Route path="/singin" element={<Singin />}/>
       <Route path="/login" element={<Login />}/>
+      <Route path="/*" element={<BadRequest />} />
     </Routes>
   )
 }

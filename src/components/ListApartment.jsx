@@ -28,10 +28,10 @@ function ListApartment() {
     <>
       <div className={style.select}>
         <h2>Blok</h2>
-        <select onChange={handleBlockChange}>
-          <option value="" disabled selected>Seçiniz</option>
+        <select defaultValue="" onChange={handleBlockChange}>
+          <option value="" disabled>Seçiniz</option>
           {uniqueBlocks.map((block, i) => (
-            <option key={i}>{block}</option>
+            <option value={block} key={i}>{block}</option>
           ))}
         </select>
       </div>

@@ -31,7 +31,7 @@ function Main() {
         </div>
         <div className={style.scroll_button}>
           <NavLink to="/description">
-            <i class="fa-solid fa-circle-down"></i>
+            <i className="fa-solid fa-circle-down"></i>
           </NavLink>
         </div>
       </div>
