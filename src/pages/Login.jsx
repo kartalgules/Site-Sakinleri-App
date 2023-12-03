@@ -12,8 +12,7 @@ import BadRequest from "./BadRequest";
 
 function Login() {
   return (
-    <>
-      <Navbar>
+        <Navbar>
         <Routes>
           <Route path="/" exact="true" element={<Home />} />
           <Route path="/list" element={<List />} />
@@ -26,7 +25,6 @@ function Login() {
           <Route path="/*" element={<BadRequest />} />
         </Routes>
       </Navbar>
-    </>
   );
 }
 
