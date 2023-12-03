@@ -17,9 +17,10 @@ import Singin from "./Logout/Singin";
 
 function Login() {
   const data = useContext(LoginContext);
-  return (
-    <>
-      {data.login ? (
+
+  const İsLogin = () => {
+    return (
+      <>
         <Navbar>
           <Routes>
             <Route path="/" exact="true" element={<HomeLogin />} />
@@ -33,16 +34,24 @@ function Login() {
             <Route path="/*" element={<BadRequest />} />
           </Routes>
         </Navbar>
-      ) : (
+      </>
+    );
+  };
+
+  const İsLogout = () => {
+    return (
+      <>
         <Routes>
           <Route path="/" element={<HomeLogout />} />
           <Route path="/singin" element={<Singin />} />
           <Route path="/login" element={<GoLogin />} />
           <Route path="/*" element={<BadRequest />} />
         </Routes>
-      )}
-    </>
-  );
+      </>
+    );
+  };
+
+  return <>{data.login ? <İsLogin /> : <İsLogout />}</>;
 }
 
 export default Login;
