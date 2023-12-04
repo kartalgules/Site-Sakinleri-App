@@ -36,4 +36,4 @@ useEffect(() => {
   );
 };
 
-export const uselogin = () => useContext(LoginContext) ;
+export const useLogin = () => useContext(LoginContext) ;

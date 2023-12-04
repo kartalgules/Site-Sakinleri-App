@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { NavLink } from "react-router-dom";
-import { uselogin } from "../../context/LoginContext";
+import { useLogin } from "../../context/LoginContext";
 import style from '../../styles/Logout.module.css'
 
 function Logout() {
-  const data = uselogin();
+  const data = useLogin();
   const handleOut = () => {
     setTimeout(()=>{
       data.setLogin(false)
