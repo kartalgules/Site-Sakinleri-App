@@ -1,18 +1,15 @@
 /* eslint-disable no-unused-vars */
-import { useContext } from "react";
-import style from '../../styles/Logout.module.css'
 import { NavLink } from "react-router-dom";
-import LoginContext from "../../context/LoginContext";
+import { uselogin } from "../../context/LoginContext";
+import style from '../../styles/Logout.module.css'
 
 function Logout() {
-  const data = useContext(LoginContext);
-
+  const data = uselogin();
   const handleOut = () => {
     setTimeout(()=>{
       data.setLogin(false)
     },1000)
   }
-  
   return (
     <div className={style.logout}>
       <h2>Çıkış yapmak istediğinize emin misiniz?</h2>

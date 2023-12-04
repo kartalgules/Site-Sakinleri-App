@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { isEqual } from "lodash";
-import LoginContext from "../../context/LoginContext";
+import { useLogin } from "../../context/LoginContext";
 import style from "../../styles/Login.module.css";
 import userData from "../../../data/users.json";
 import { Form, Input, Button } from "antd";
 
 function Login() {
-  const data = useContext(LoginContext);
+  const data = useLogin();
   const navigate = useNavigate();
   const [loginCheck, setLoginCheck] = useState("");
 

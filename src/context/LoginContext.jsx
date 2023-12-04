@@ -1,6 +1,9 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 
-import { createContext, useEffect, useState } from "react";
+
+import { createContext, useContext, useEffect, useState } from "react";
 import userData from '../../data/userData.json'
 
 const LoginContext = createContext();
@@ -33,4 +36,4 @@ useEffect(() => {
   );
 };
 
-export default LoginContext;
+export const uselogin = () => useContext(LoginContext) ;

@@ -1,7 +1,7 @@
 
 
 function Singin() {
-  return <div>Singin</div>;
+  return <div>Singin Page</div>;
 }
 
 export default Singin;

@@ -2,7 +2,7 @@
 import React from "react";
 
 function BulkDelete() {
-  return <div>BulkDelete</div>;
+  return <div>BulkDelete Page</div>;
 }
 
 export default BulkDelete;

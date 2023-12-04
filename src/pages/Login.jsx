@@ -1,6 +1,5 @@
-import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
-import LoginContext from "../context/LoginContext";
+import { uselogin } from "../context/LoginContext";
 import Navbar from "../components/Navbar";
 import HomeLogin from "./Login/Home";
 import List from "./Login/List";
@@ -16,7 +15,7 @@ import GoLogin from "./Logout/Login";
 import Singin from "./Logout/Singin";
 
 function Login() {
-  const data = useContext(LoginContext);
+  const data = uselogin();
 
   const İsLogin = () => {
     return (
