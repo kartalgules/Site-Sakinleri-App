@@ -1,20 +1,29 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
+
 import { createContext, useEffect, useState } from "react";
+import userData from '../../data/userData.json'
 
 const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
-  const [login, setLogin] = useState(false)
-  const [user, setUser] = useState({})
-  console.log('login' ,login)
-  console.log('user' ,user)
+
+  const [login, setLogin] = useState(() => {
+    const local = localStorage.getItem("user")
+    local === userData[0] ? true : false
+  })
+
+  const [userDB, setUserDB] = useState({})
+
+useEffect(() => {
+  localStorage.setItem("user", JSON.stringify(userDB))
+  userDB === userData[0] && setLogin(true)
+},[userDB])
 
   const values = {
     login,
     setLogin,
-    user,
-    setUser
+    userDB,
+    setUserDB
   };
 
   return (

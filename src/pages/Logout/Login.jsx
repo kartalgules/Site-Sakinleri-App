@@ -14,12 +14,14 @@ function Login() {
 
   
   const onFinish = (values) => {
+    let isLogin = "";
     const isEqualValues = isEqual(values, userData[0]);
-    isEqualValues ? data.login = true
+    isEqualValues ? isLogin = true
     : null;
+
     const cheking = () => {
       setLoginCheck(
-        data.login ? (
+        isLogin ? (
           <p style={{ color: "green" }}>
             Giriş Başarılı <br />
             Yönlendiriliyorsunuz..
@@ -28,14 +30,16 @@ function Login() {
           <p style={{ color: "red" }}>Giriş Başarısız.Tekrar Deneyin</p>
         )
       );
-      data.login &&
+      isLogin &&
         setTimeout(() => {
-          data.login && data.setLogin(true);
+          data.setUserDB(values)
+          data.setLogin(true);
           navigate("/");
-          data.setUser(values);
         }, 2000);
     };
+
     cheking();
+
   };
 
   return (
