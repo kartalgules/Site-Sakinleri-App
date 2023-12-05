@@ -12,12 +12,10 @@ function Login() {
   const navigate = useNavigate();
   const [loginCheck, setLoginCheck] = useState("");
 
-  
   const onFinish = (values) => {
     let isLogin = "";
     const isEqualValues = isEqual(values, userData[0]);
-    isEqualValues ? isLogin = true
-    : null;
+    isEqualValues ? (isLogin = true) : null;
 
     const cheking = () => {
       setLoginCheck(
@@ -32,16 +30,13 @@ function Login() {
       );
       isLogin &&
         setTimeout(() => {
-          data.setUserDB(values)
+          data.setUserDB(values);
           data.setLogin(true);
           navigate("/");
         }, 2000);
     };
-
     cheking();
-
   };
-
   return (
     <div className={style.login_container}>
       <div className={style.login_form}>
