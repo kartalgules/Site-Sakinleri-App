@@ -1,8 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
-
-
 import { createContext, useContext, useEffect, useState } from "react";
 import userData from '../../data/userData.json'
 
@@ -17,10 +15,10 @@ export const LoginProvider = ({ children }) => {
 
   const [userDB, setUserDB] = useState({})
 
-useEffect(() => {
-  localStorage.setItem("user", JSON.stringify(userDB))
-  userDB === userData[0] && setLogin(true)
-},[userDB])
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(userDB))
+    userDB === userData[0] && setLogin(true)
+  },[userDB])
 
   const values = {
     login,
