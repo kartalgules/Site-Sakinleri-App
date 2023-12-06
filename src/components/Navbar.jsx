@@ -2,14 +2,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import style from '../styles/Navbar.module.css'
-
+import userData from '../../data/userData.json'
 function Navbar() {
   
   return (
     <nav>
       <div className={style.userDetail}>
         <h3>Örnek Sitesi</h3>
-        <p>Sakin Sayısı : 2500 Kişi</p>
+        <p>Sakin Sayısı : {userData.map((user)=>user.fullName).length} Kişi</p>
       </div>
       <div className={style.routes}>
         <NavLink exact="true" to="/">Anasayfa</NavLink>
