@@ -5,12 +5,11 @@
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-color: aqua;
 }
-h1 {
+.main h1 {
     font-size: 55px;
 }
-a {
+.main a {
     font-size: 20px;
     font-weight: 700;
     color: red;
