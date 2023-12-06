@@ -67,8 +67,8 @@ function Login() {
           >
             Giriş Yap
           </Button>
-          {loginCheck}
         </Form>
+        <div className={style.logCheck}>{loginCheck}</div>
       </div>
     </div>
   );
