@@ -42,6 +42,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 40%;
-    background-color: aqua;
+    margin-top: 10px;
+    height: 20%;
+}
+.login_container a {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
 }

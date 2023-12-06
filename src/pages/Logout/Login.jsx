@@ -70,8 +70,8 @@ function Login() {
         </Form>
         <div className={style.logCheck}>
           {loginCheck}
-          <NavLink to={'/'} >Anasayfaya Dön</NavLink>
         </div>
+          <NavLink to={'/'} >Anasayfaya Dön</NavLink>
       </div>
     </div>
   );
