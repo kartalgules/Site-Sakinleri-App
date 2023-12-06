@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { isEqual } from "lodash";
 import { useLogin } from "../../context/LoginContext";
 import style from "../../styles/Login.module.css";
@@ -68,7 +68,10 @@ function Login() {
             Giriş Yap
           </Button>
         </Form>
-        <div className={style.logCheck}>{loginCheck}</div>
+        <div className={style.logCheck}>
+          {loginCheck}
+          <NavLink to={'/'} >Anasayfaya Dön</NavLink>
+        </div>
       </div>
     </div>
   );
