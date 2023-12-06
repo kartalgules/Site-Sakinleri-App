@@ -71,7 +71,7 @@
     left: 50%;
     background-color: aliceblue;
     border-radius: 50%;
-    animation: lookOut 2s infinite ease-in-out;
+    animation: lookOut 2.5s infinite ease-in-out;
 }
 .scroll_button > a > i {
     font-size: 40px;
