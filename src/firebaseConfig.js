@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyBAlIpidi5RPmi5AW5SdSt3s-gExO9Wwtw",
-    authDomain: "site-sakinleri-app.firebaseapp.com",
-    projectId: "site-sakinleri-app",
-    storageBucket: "site-sakinleri-app.appspot.com",
-    messagingSenderId: "887932606162",
-    appId: "1:887932606162:web:757fd1e4386e5067bf7f0b"
+    apiKey: import.meta.env.VITE_API_KEY,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_APP_ID
   };
