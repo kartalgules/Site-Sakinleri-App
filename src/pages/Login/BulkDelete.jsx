@@ -6,4 +6,3 @@ function BulkDelete() {
 }
 
 export default BulkDelete;
-

@@ -6,4 +6,3 @@ function Descriptions() {
 }
 
 export default Descriptions;
-
