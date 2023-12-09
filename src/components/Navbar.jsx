@@ -12,7 +12,6 @@ function Navbar() {
         <p>Sakin Sayısı : {userData.map((user)=>user.fullName).length} Kişi</p>
       </div>
       <div className={style.routes}>
-        <NavLink exact="true" to="/">Anasayfa</NavLink>
         <NavLink to="/list">Sakin Listesi</NavLink>
         <NavLink to="/add">Sakin Ekle</NavLink>
         <NavLink to="/excelAdd">Excel Toplu Ekle</NavLink>
