@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import { NavLink , Route, Routes } from "react-router-dom";
 import { useLogin } from "../context/LoginContext";
 import Navbar from "../components/Navbar";
 import HomeLogin from "./Login/Home";
