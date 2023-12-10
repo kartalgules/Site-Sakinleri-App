@@ -2,42 +2,12 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { isEqual } from "lodash";
-import { useLogin } from "../../context/LoginContext";
 import style from "../../styles/Login.module.css";
-import userData from "../../../data/users.json";
 import { Form, Input, Button } from "antd";
 import { singIn } from "../../firebase";
 
 function Login() {
-  // const data = useLogin();
-  // const navigate = useNavigate();
-  // const [loginCheck, setLoginCheck] = useState("");
-
-  // const onFinish = (values) => {
-  //   let isLogin = "";
-  //   const isEqualValues = isEqual(values, userData[0]);
-  //   isEqualValues ? (isLogin = true) : null;
-
-  //   const cheking = () => {
-  //     setLoginCheck(
-  //       isLogin ? (
-  //         <p style={{ color: "green" }}>
-  //           Giriş Başarılı <br />
-  //           Yönlendiriliyorsunuz..
-  //         </p>
-  //       ) : (
-  //         <p style={{ color: "red" }}>Giriş Başarısız.Tekrar Deneyin</p>
-  //       )
-  //     );
-  //     isLogin &&
-  //       setTimeout(() => {
-  //         data.setUserDB(values);
-  //         data.setLogin(true);
-  //         navigate("/");
-  //       }, 2000);
-  //   };
-  //   cheking();
-  // };
+  const [loginCheck, setLoginCheck] = useState("");
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -48,13 +18,27 @@ function Login() {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    singIn(mail,password)
-    .then(() => {
-      console.log("Done..")
-    }).catch(e=> console.log(e.message))
-  }
+    singIn(mail, password)
+      .then(() => {
+        setLoginCheck(
+          <p style={{ color: "green" }}>
+            Giriş Başarılı <br />
+            Yönlendiriliyorsunuz..
+          </p>
+        );
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
+      })
+      .catch(
+        setLoginCheck(
+          <p style={{ color: "red" }}>Giriş Başarısız.Tekrar Deneyin</p>
+        )
+      );
+  };
 
   return (
     <div className={style.login_container}>
@@ -91,7 +75,7 @@ function Login() {
             Giriş Yap
           </Button>
         </Form>
-        <div className={style.logCheck}>{/* {loginCheck} */}</div>
+        <div className={style.logCheck}>{loginCheck}</div>
         <NavLink to={"/"}>Anasayfaya Dön</NavLink>
       </div>
     </div>

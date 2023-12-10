@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { NavLink , Route, Routes } from "react-router-dom";
-import { useLogin } from "../context/LoginContext";
 import Navbar from "../components/Navbar";
 import HomeLogin from "./Login/Home";
 import List from "./Login/List";
@@ -14,10 +13,9 @@ import BadRequest from "./BadRequest";
 import HomeLogout from "./Logout/Home";
 import GoLogin from "./Logout/Login";
 import Singin from "./Logout/Singin";
+import { singIn } from "../firebase";
 
 function Login() {
-  const data = useLogin();
-
   const İsLogin = () => {
     return (
       <>
@@ -51,7 +49,7 @@ function Login() {
     );
   };
 
-  return <>{data.login ? <İsLogin /> : <İsLogout />}</>;
+  return <>{singIn ? <İsLogin /> : <İsLogout />}</>;
 }
 
 export default Login;
