@@ -1,9 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
   createUserWithEmailAndPassword,
   updateCurrentUser,
 } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import style from '../../styles/SingIn.module.css'
 
 function Singin() {
   const singUp = async (name, email, password) => {
@@ -13,6 +16,7 @@ function Singin() {
   const [fullName, setFullName] = useState("");
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   // const singIn = (email, password) => {};
 
   const handleFullName = (e) => {
@@ -28,15 +32,16 @@ function Singin() {
     e.preventDefault();
     singUp(fullName, mail, password)
       .then(() => {
-        console.log("Done!..");
+        navigate("/login");
+        console.log("Done!..")
       })
       .catch((e) => {
         console.log(e);
       });
   };
   return (
-    <div>
-      <form>
+    <div className={style.form_container}>
+      <form >
         <label>İsminiz</label>
         <input
           type="text"
@@ -51,7 +56,7 @@ function Singin() {
           value={mail}
           onChange={handleMail}
         />
-        <label>İsminiz</label>
+        <label>Parolanız</label>
         <input
           type="password"
           placeholder="Parolanızı giriniz.."
