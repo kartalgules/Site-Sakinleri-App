@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { NavLink , Route, Routes } from "react-router-dom";
+import { singIn } from "../firebase";
 import Navbar from "../components/Navbar";
 import HomeLogin from "./Login/Home";
 import List from "./Login/List";
@@ -13,7 +14,6 @@ import BadRequest from "./BadRequest";
 import HomeLogout from "./Logout/Home";
 import GoLogin from "./Logout/Login";
 import Singin from "./Logout/Singin";
-import { singIn } from "../firebase";
 
 function Login() {
   const İsLogin = () => {
