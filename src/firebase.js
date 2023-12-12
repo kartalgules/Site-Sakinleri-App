@@ -10,7 +10,7 @@ import {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-// export const db = Firestore(app);
+
 export const singUp = async (name, email, password) => {
   await createUserWithEmailAndPassword(auth, email, password);
   await updateCurrentUser(auth, { displayName: name });

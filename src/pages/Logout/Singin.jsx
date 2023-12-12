@@ -2,10 +2,11 @@
 import { useFormik } from "formik";
 import { basicSchema } from "../../schemas";
 import style from "../../styles/SingIn.module.css";
-// import { useNavigate } from "react-router-dom";
 // import { singUp } from "../../firebase";
+// import { useNavigate } from "react-router-dom";
 
 function Singin() {
+  
   const { handleChange, handleSubmit, values, errors } = useFormik({
     initialValues: {
       fullName: "",
@@ -18,31 +19,20 @@ function Singin() {
     },
     validationSchema: basicSchema,
   });
-  // const [fullName, setFullName] = useState("");
-  // const [mail, setMail] = useState("");
-  // const [password, setPassword] = useState("");
+
   // const navigate = useNavigate();
 
-  // const handleFullName = (e) => {
-  //   setFullName(e.target.value);
-  // };
-  // const handleMail = (e) => {
-  //   setMail(e.target.value);
-  // };
-  // const handlePassword = (e) => {
-  //   setPassword(e.target.value);
-  // };
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   singUp(fullName, mail, password)
-  //     .then(() => {
-  //       navigate("/login");
-  //       console.log("Done!..")
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //     });
-  // };
+  // handleSubmit && {
+  //   singUp(mail, password)
+  //   .then(() => {
+  //     navigate("/login");
+  //     console.log("Done!..")
+  //   })
+  //   .catch((e) => {
+  //     console.log(e);
+  //   })
+  // }
+  
   return (
     <div className={style.form_container}>
       <form onSubmit={handleSubmit}>
