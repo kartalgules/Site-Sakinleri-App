@@ -22,10 +22,10 @@
     cursor: pointer;
     border: none;
 }
-.login_form  button:active {
+.login_form > button:active {
     transform: scale(0.99);
 }
-.login_form > button , input {
+.login_form > button ,.login_form > input {
     margin-top: 20px;
     height: 50px;
     width: 400px;
@@ -34,7 +34,7 @@
     border-radius: 5px;
     box-shadow: 4px 5px 7px 0px rgba(0,0,0,0.53);
 }
-.login_form  p {
+.login_form > p {
     margin-top: 10px;
     font-weight: 600;
 }
@@ -45,7 +45,7 @@
     margin-top: 10px;
     height: 20%;
 }
-.login_container a {
+.login_container > a {
     color: rgb(255, 255, 255);
     font-weight: 700;
 }
