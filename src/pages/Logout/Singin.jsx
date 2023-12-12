@@ -6,17 +6,17 @@ import style from '../../styles/SingIn.module.css'
 // import { singUp } from "../../firebase";
 
 function Singin() {
-  const { handleChange, handleSubmit, values } = useFormik({
+  const { handleChange, handleSubmit, values, errors } = useFormik({
     initialValues: {
       fullName: "",
       email: "",
       password: "",
       confirmPassword:""
     },
-    validationSchema:basicSchema,
     onSubmit: (values) => {
       console.log(values.email);
     },
+    validationSchema:basicSchema,
   });
   
   // const [fullName, setFullName] = useState("");
@@ -55,6 +55,7 @@ function Singin() {
           value={values.fullName}
           onChange={handleChange}
         />
+        {errors.fullName && <p className="error">{errors.fullName}</p>}
         <label>Email</label>
         <input
           type="email"
@@ -62,7 +63,9 @@ function Singin() {
           placeholder="Mail adresinizi giriniz.."
           value={values.email}
           onChange={handleChange}
+          className={errors.email ? 'input-error' : ''}
         />
+        {errors.email && <p className="error">{errors.email}</p>}
         <label>Şifre</label>
         <input
           type="password"
@@ -71,6 +74,7 @@ function Singin() {
           value={values.password}
           onChange={handleChange}
         />
+        {errors.password && <p className="error">{errors.password}</p>}
         <label>Şifre Onayı</label>
         <input
           type="password"
@@ -79,6 +83,7 @@ function Singin() {
           value={values.confirmPassword}
           onChange={handleChange}
         />
+        {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
         <button type="submit">Gönder</button>
       </form>
     </div>

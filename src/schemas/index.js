@@ -2,11 +2,11 @@ import * as yup from "yup";
 const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
 export const basicSchema = yup.object().shape({
+  fullName: yup.string().required("Lütfen adınızı giriniz"),
   email: yup
     .string()
     .email("Geçerli bir email giriniz")
     .required("Email girmek zorunludur"),
-  fullName: yup.string().name().required("Lütfen adınızı giriniz"),
   password: yup
     .string()
     .min(6, "Lütfen minimum 6 karakter giriniz")
