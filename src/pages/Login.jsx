@@ -49,7 +49,7 @@ function Login() {
     );
   };
 
-  return <>{singIn ? <İsLogout /> : <İsLogin />}</>;
+  return <>{singIn ? <İsLogin /> : <İsLogout />}</>;
 }
 
 export default Login;
