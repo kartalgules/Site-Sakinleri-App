@@ -24,19 +24,15 @@ function Login() {
     return (
       <>
         <Navbar>
-          <Router>
-            <Routes>
-              <Route path="/" exact="true" element={<HomeLogin />} />
-              <Route path="/list" element={<List />} />
-              <Route path="/add" element={<Add />} />
-              <Route path="/excelAdd" element={<ExcelAdd />} />
-              <Route path="/bulkDelete" element={<BulkDelete />} />
-              <Route path="/edit" element={<Edit />} />
-              <Route path="/settings" element={<Settings />} />
-              <Route path="/logout" element={<LogoutButton />} />
-              <Route path="/*" element={<BadRequest />} />
-            </Routes>
-          </Router>
+          <Route path="/" exact="true" element={<HomeLogin />} />
+          <Route path="/list" element={<List />} />
+          <Route path="/add" element={<Add />} />
+          <Route path="/excelAdd" element={<ExcelAdd />} />
+          <Route path="/bulkDelete" element={<BulkDelete />} />
+          <Route path="/edit" element={<Edit />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/logout" element={<LogoutButton />} />
+          <Route path="/*" element={<BadRequest />} />
         </Navbar>
       </>
     );
@@ -45,19 +41,15 @@ function Login() {
   const İsLogout = () => {
     return (
       <>
-        <Router>
-          <Routes>
-            <Route path="/" element={<HomeLogout />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/*" element={<BadRequest />} />
-          </Routes>
-        </Router>
+        <Route path="/" element={<HomeLogout />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<BadRequest />} />
       </>
     );
   };
 
-  return <>{ auth ? <İsLogin /> : <İsLogout />}</>;
+  return <>{auth ? <İsLogin /> : <İsLogout />}</>;
 }
 
 export default Login;
