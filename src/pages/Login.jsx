@@ -12,8 +12,8 @@ import Settings from "./Login/Settings";
 import LogoutButton from "./Login/Logout";
 import BadRequest from "./BadRequest";
 import HomeLogout from "./Logout/Home";
-import GoLogin from "./Logout/Login";
-import Singin from "./Logout/Singin";
+import Login from "../apps/auth/Login";
+import Register from "../apps/auth/Register";
 import FirebaseContext from "../context/FirebaseContext";
 import { useContext } from "react";
 
@@ -48,8 +48,8 @@ function Login() {
         <Router>
           <Routes>
             <Route path="/" element={<HomeLogout />} />
-            <Route path="/singin" element={<Singin />} />
-            <Route path="/login" element={<GoLogin />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/*" element={<BadRequest />} />
           </Routes>
         </Router>
