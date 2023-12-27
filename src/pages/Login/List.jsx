@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import style from "../../styles/List.module.css";
 import data from "../../../data/userData.json";

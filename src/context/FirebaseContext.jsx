@@ -1,11 +1,9 @@
-/* eslint-disable react/prop-types */
 import { createContext } from "react";
-import { auth , db } from "../firebase";
+import { auth } from "../firebase";
 
 const FirebaseContext = createContext();
 const value = {
-    auth,
-    db
+    auth
 };
 
 export const FirebaseProvider = ({children}) => {

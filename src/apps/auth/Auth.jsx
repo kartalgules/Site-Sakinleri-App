@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { auth } from "../../firebase";
 import { toast } from 'react-toastify';
 
-export const Auth = () => {
+   const Auth = () => {
     const [singUp, setSingUp] = useState(true);
     const [authData, setAuthData] = useState({email:'', password:''});
     const [users, setUsers] = useState(null);
@@ -63,3 +63,5 @@ export const Auth = () => {
     </>
   );
 };
+
+export default Auth;

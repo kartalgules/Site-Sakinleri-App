@@ -1,8 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-extra-semi */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-
 import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import * as XLSX from "xlsx";

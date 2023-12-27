@@ -1,10 +1,19 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { toast } from "react-toastify";
+import { auth } from "../firebase";
 import style from '../styles/Navbar.module.css'
-import userData from '../../data/userData.json'
 
 function Navbar() {
+
+  const logoutFunc = async () => {
+    toast.success('Çıkış işlemi gerçekleştiriliyor..');
+    await signOut(auth);
+    setTimeout(()=>{
+      window.location = '/'
+    },5000)
+  }
   
   return (
     <nav>
@@ -18,7 +27,7 @@ function Navbar() {
         <NavLink to="/excelAdd">Excel Toplu Ekle</NavLink>
         <NavLink to="/bulkDelete">Excel Toplu Sil</NavLink>
         <NavLink to="/settings">Ayarlar</NavLink>
-        <NavLink to="/logout">Çıkış</NavLink>
+        <a href="#" onClick={logoutFunc}>Logout</a>
       </div>
     </nav>
   )
