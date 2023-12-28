@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FirebaseContext from "../context/FirebaseContext";
 import Navbar from "../components/Navbar";
 import HomeLogin from "./Login/Home";
@@ -13,22 +13,24 @@ import BadRequest from "./BadRequest";
 import HomeLogout from "./Logout/Home";
 import Auth from "../apps/auth/Auth";
 
-function Login() {
+function Login({users}) {
   const { auth } = useContext(FirebaseContext);
-
   const İsLogin = () => {
     return (
       <>
         <Navbar>
-          <Route path="/" exact="true" element={<HomeLogin />} />
-          <Route path="/list" element={<List />} />
-          <Route path="/add" element={<Add />} />
-          <Route path="/excelAdd" element={<ExcelAdd />} />
-          <Route path="/bulkDelete" element={<BulkDelete />} />
-          <Route path="/edit" element={<Edit />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/logout" element={<LogoutButton />} />
-          <Route path="/*" element={<BadRequest />} />
+          <Router>
+            <Routes>
+              <Route path="/" exact="true" element={<HomeLogin />} />
+              <Route path="/list" element={<List />} />
+              <Route path="/add" element={<Add />} />
+              <Route path="/excelAdd" element={<ExcelAdd />} />
+              <Route path="/bulkDelete" element={<BulkDelete />} />
+              <Route path="/edit" element={<Edit />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/*" element={<BadRequest />} />
+            </Routes>
+          </Router>
         </Navbar>
       </>
     );
@@ -36,14 +38,16 @@ function Login() {
 
   const İsLogout = () => {
     return (
-      <>
-        <Route path="/" element={<HomeLogout />} />
-        <Route path="/login" element={<Auth />} />
-        <Route path="/*" element={<BadRequest />} />
-      </>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomeLogout />} />
+          <Route path="/register" element={<Auth />} />
+          <Route path="/*" element={<BadRequest />} />
+        </Routes>
+      </Router>
     );
   };
-  return <>{ auth ? <İsLogin /> : <İsLogout />}</>;
+  return <>{ users.email ? <İsLogout /> : <İsLogin /> }</>;
 }
 
 export default Login;

@@ -6,20 +6,20 @@ import { auth } from "../firebase";
 import style from '../styles/Navbar.module.css'
 
 function Navbar() {
-
+  
   const logoutFunc = async () => {
     toast.success('Çıkış işlemi gerçekleştiriliyor..');
     await signOut(auth);
-    setTimeout(()=>{
-      window.location = '/'
-    },5000)
+    // setTimeout(()=>{
+    //   window.location = '/'
+    // },5000)
   }
   
   return (
     <nav>
       <div className={style.userDetail}>
         <h3>Örnek Sitesi</h3>
-        <p>Sakin Sayısı : {userData.map((user)=>user.fullName).length} Kişi</p>
+        <p>Sakin Sayısı : 100 Kişi</p>
       </div>
       <div className={style.routes}>
         <NavLink to="/list">Sakin Listesi</NavLink>

@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable react/no-unescaped-entities */
 import { NavLink } from "react-router-dom";
 import style from "../../styles/LogoutHomeMain.module.css";
 
@@ -11,8 +9,7 @@ function Main() {
           <img src="../../../public/Logo.png" alt="logo" />
         </div>
         <div className={style.login}>
-          <NavLink to="/singin">Üye Ol</NavLink>
-          <NavLink to="/login">Giriş Yap</NavLink>
+          <NavLink to="/register">Üye Ol veya Giriş Yap</NavLink>
         </div>
       </div>
       <div className={style.section}>
