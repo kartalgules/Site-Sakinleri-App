@@ -5,13 +5,14 @@ import { auth } from "./firebase";
 
 function App() {
 
-  const [users, setUsers] = useState(null);
-
+  const [users, setUsers] = useState("");
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
         setUsers(user);
+      }else{
+        setUsers("");
       }
     });
   }, []);

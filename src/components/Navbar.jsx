@@ -10,9 +10,9 @@ function Navbar() {
   const logoutFunc = async () => {
     toast.success('Çıkış işlemi gerçekleştiriliyor..');
     await signOut(auth);
-    // setTimeout(()=>{
-    //   window.location = '/'
-    // },5000)
+    setTimeout(()=>{
+      window.location = '/'
+    },5000)
   }
   
   return (
@@ -27,7 +27,8 @@ function Navbar() {
         <NavLink to="/excelAdd">Excel Toplu Ekle</NavLink>
         <NavLink to="/bulkDelete">Excel Toplu Sil</NavLink>
         <NavLink to="/settings">Ayarlar</NavLink>
-        <a href="#" onClick={logoutFunc}>Logout</a>
+        <NavLink to="/">Ayarlar</NavLink>
+        <button onClick={logoutFunc}>Logout</button>
       </div>
     </nav>
   )
