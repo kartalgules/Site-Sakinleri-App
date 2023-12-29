@@ -6,6 +6,7 @@ import {
 import React, { useState } from "react";
 import { auth } from "../../firebase";
 import { toast } from "react-toastify";
+import style from '../../styles/Auth.module.css'
 
 const Auth = () => {
   const [singUp, setSingUp] = useState(true);
@@ -47,11 +48,12 @@ const Auth = () => {
   };
   return (
     <>
-      <div className="auth">
-        <div className="auth-container">
-          <h2>{singUp ? "REGISTER" : "LOGIN"}</h2>
+      <div className={style.auth}>
+        <div className={style.authContainer}>
+          <h1>{singUp ? "REGISTER" : "LOGIN"}</h1>
           <input
             type="email"
+            className={style.input}
             name="email"
             value={authData.email}
             onChange={onChange}
@@ -59,20 +61,21 @@ const Auth = () => {
           />
           <input
             type="password"
+            className={style.input}
             name="password"
             value={authData.password}
             onChange={onChange}
             placeholder="Password"
           />
-          <div className="auth-container-google">
-            Google ile Giriş Yap
+          <div className={style.authChoise}>
+            
             <p onClick={() => setSingUp(!singUp)}>
               {singUp
-                ? "Daha önce kayıt oldunuz mu?"
-                : "Kayıt olmak mı istiyorsunuz"}
+                ? "Have you registered before ?"
+                : "Do you want to register ?"}
             </p>
           </div>
-          <div className="auth-container-button" onClick={authFunc}>
+          <div className={style.authContainerButton} onClick={authFunc}>
             {singUp ? "Register" : "Login"}
           </div>
         </div>
