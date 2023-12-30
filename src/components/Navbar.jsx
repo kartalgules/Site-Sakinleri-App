@@ -7,12 +7,12 @@ import style from '../styles/Navbar.module.css'
 
 function Navbar() {
   
-  const logoutFunc = async() => {
+  const logoutFunc = () => {
     toast.success('Çıkış işlemi gerçekleştiriliyor..');
-    await signOut(auth);
-    setTimeout(()=>{
+    setTimeout(() => {
+      signOut(auth);
       window.location = '/'
-    }, 5000);
+    }, 3000);
   }
   
   return (
@@ -28,6 +28,9 @@ function Navbar() {
         <NavLink to="/bulkDelete">Excel Toplu Sil</NavLink>
         <NavLink to="/settings">Ayarlar</NavLink>
         <div className={style.logout} onClick={logoutFunc}>Çıkış</div>
+      </div>
+      <div className={style.copyright}>
+          <p>Copyright by <strong>KARTAL GULES</strong></p>
       </div>
     </nav>
   )

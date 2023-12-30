@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import FirebaseContext from "../context/FirebaseContext";
 import Navbar from "../components/Navbar";
 import HomeLogin from "./Login/Home";
 import List from "./Login/List";
@@ -15,7 +13,6 @@ import Auth from "../apps/auth/Auth";
 import style from '../styles/İsLogin.module.css'
 
 function Login({ users }) {
-  const { auth } = useContext(FirebaseContext);
   const İsLogin = () => {
     return (
       <div className={style.mainContainer}>

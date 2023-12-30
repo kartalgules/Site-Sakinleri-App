@@ -24,7 +24,9 @@ const Auth = () => {
         );
         const user = data.user;
         if (user) {
-          window.location = "/";
+          setTimeout(()=>{
+            window.location = "/";
+          }, 2000)
         }
       } catch (error) {
         toast.error(error.message);
@@ -38,7 +40,9 @@ const Auth = () => {
         );
         const user = data.user;
         if (user) {
-          window.location = "/";
+          setTimeout(()=>{
+            window.location = "/";
+          }, 2000)
         }
       } catch (error) {
         toast.error(error.message);
