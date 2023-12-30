@@ -55,6 +55,7 @@ nav{
     align-items: center;
     width: 100%;
     color : white;
+    cursor: pointer;
 }
 .copyright {
     position: absolute;

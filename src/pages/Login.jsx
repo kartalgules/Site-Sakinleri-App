@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Auth from "../apps/auth/Auth";
 import HomeLogin from "./Login/Home";
 import List from "./Login/List";
 import Add from "./Login/Add";
@@ -9,7 +10,6 @@ import Edit from "./Login/Edit";
 import Settings from "./Login/Settings";
 import BadRequest from "./BadRequest";
 import HomeLogout from "./Logout/Home";
-import Auth from "../apps/auth/Auth";
 import style from '../styles/İsLogin.module.css'
 
 function Login({ users }) {

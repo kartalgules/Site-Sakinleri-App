@@ -6,10 +6,12 @@ import React, { useState } from "react";
 import { auth } from "../../firebase";
 import { toast } from "react-toastify";
 import style from "../../styles/Auth.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Auth = () => {
   const [singUp, setSingUp] = useState(true);
   const [authData, setAuthData] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
 
   const onChange = (e) => {
     setAuthData({ ...authData, [e.target.name]: e.target.value });
@@ -24,9 +26,7 @@ const Auth = () => {
         );
         const user = data.user;
         if (user) {
-          setTimeout(()=>{
-            window.location = "/";
-          }, 2000)
+          navigate('/');
         }
       } catch (error) {
         toast.error(error.message);
@@ -40,9 +40,7 @@ const Auth = () => {
         );
         const user = data.user;
         if (user) {
-          setTimeout(()=>{
-            window.location = "/";
-          }, 2000)
+          navigate('/');
         }
       } catch (error) {
         toast.error(error.message);
