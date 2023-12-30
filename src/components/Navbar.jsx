@@ -11,8 +11,8 @@ function Navbar() {
     toast.success('Çıkış işlemi gerçekleştiriliyor..');
     setTimeout(() => {
       signOut(auth);
-      window.location = '/'
-    }, 3000);
+      navigate('/');
+    }, 5000);
   }
   
   return (

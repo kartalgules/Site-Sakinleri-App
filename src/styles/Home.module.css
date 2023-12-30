@@ -5,4 +5,9 @@
   align-items: center;
   height: 92vh;
   width: 100%;
+  font-size: 25px;
+  font-weight: 700;
+}
+.main_container > span {
+  color: red;
 }

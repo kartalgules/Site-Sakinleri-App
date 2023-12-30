@@ -1,11 +1,12 @@
 import React from "react";
 import style from "../../styles/Home.module.css";
+import { auth } from "../../firebase";
 
 function Home() {
-
+  console.log(auth)
   return (
     <div className={style.main_container}>
-      <h1>Hoşgeldiniz Kullanıcı</h1>
+      Hoşgeldiniz <span>{auth._currentUser.email}</span>
     </div>
   );
 }
