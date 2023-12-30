@@ -1,0 +1,6 @@
+.mainContainer {
+    display: flex;
+}
+.article {
+    width: 85%;
+}

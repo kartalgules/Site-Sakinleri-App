@@ -7,12 +7,12 @@ import style from '../styles/Navbar.module.css'
 
 function Navbar() {
   
-  const logoutFunc = async () => {
+  const logoutFunc = async() => {
     toast.success('Çıkış işlemi gerçekleştiriliyor..');
     await signOut(auth);
     setTimeout(()=>{
       window.location = '/'
-    },5000)
+    }, 5000);
   }
   
   return (
@@ -27,8 +27,7 @@ function Navbar() {
         <NavLink to="/excelAdd">Excel Toplu Ekle</NavLink>
         <NavLink to="/bulkDelete">Excel Toplu Sil</NavLink>
         <NavLink to="/settings">Ayarlar</NavLink>
-        <NavLink to="/">Ayarlar</NavLink>
-        <button onClick={logoutFunc}>Logout</button>
+        <div className={style.logout} onClick={logoutFunc}>Çıkış</div>
       </div>
     </nav>
   )

@@ -1,12 +1,11 @@
 import {
   createUserWithEmailAndPassword,
-  onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../firebase";
 import { toast } from "react-toastify";
-import style from '../../styles/Auth.module.css'
+import style from "../../styles/Auth.module.css";
 
 const Auth = () => {
   const [singUp, setSingUp] = useState(true);
@@ -68,11 +67,12 @@ const Auth = () => {
             placeholder="Password"
           />
           <div className={style.authChoise}>
-            
             <p onClick={() => setSingUp(!singUp)}>
+              <i class="fa-solid fa-circle-arrow-right"></i>{" "}
               {singUp
                 ? "Have you registered before ?"
-                : "Do you want to register ?"}
+                : "Do you want to register ?"}{" "}
+              <i class="fa-solid fa-circle-arrow-left"></i>
             </p>
           </div>
           <div className={style.authContainerButton} onClick={authFunc}>
