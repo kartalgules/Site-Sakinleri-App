@@ -12,7 +12,7 @@ function Navbar() {
     setTimeout(() => {
       signOut(auth);
       navigate('/');
-    }, 5000);
+    }, 2000);
   }
   
   return (
@@ -35,5 +35,3 @@ function Navbar() {
     </nav>
   )
 }
-
-export default Navbar;

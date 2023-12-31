@@ -31,7 +31,7 @@
     flex-direction: column;
     font-weight: 600;
     cursor: pointer;
-
+    color: red;
 }
 .authContainerButton {
     display: flex;
