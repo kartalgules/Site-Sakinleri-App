@@ -10,8 +10,7 @@ function Navbar() {
   const logoutFunc = () => {
     toast.success('Çıkış işlemi gerçekleştiriliyor..');
     setTimeout(() => {
-      signOut(auth);
-      navigate('/');
+      signOut(auth) && navigate('/');
     }, 5500);
   }
   
