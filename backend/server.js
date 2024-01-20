@@ -25,4 +25,4 @@ mongoose.connect(process.env.MONGO_URI)
 })
 .catch(err => console.log('Error : ', err))
 
-app.use('/api/sakinler',personRoute)
+app.use('/api/persons',personRoute)

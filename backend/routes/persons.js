@@ -1,36 +1,28 @@
 const express = require('express');
-const personModel = require('../models/personModels')
+const { 
+    personGet, 
+    personCreate, 
+    personRead, 
+    personUpdate, 
+    personDelete 
+} = require('../controllers/personController');
+
+//  Router Created
 const router = express.Router();
 
-router.get('/',(req,res) => {
-    res.json({msg: 'Bütün Sakinler'})
-})
+//  All person get
+router.get('/',personGet)
 
 //  Create
-router.post('/', async (req,res) => {
-    const {block,apartment,fullname,tel} = req.body;
-
-    try {
-        const sakin = await personModel.create({block,apartment,fullname,tel})
-        res.status(200).json(sakin)
-    } catch (error) {
-        res.status(400).json({error : error.message})
-    }
-})
+router.post('/', personCreate)
 
 //  Read
-router.get('/:id',(req,res) => {
-    res.json({msg:`${req.params.id} id'li notu getir`})
-})
+router.get('/:id', personRead)
 
 //  Update
-router.patch('/:id', (req,res) => {
-    res.json({msg :`${req.params.id} id'li Notu güncelle`})
-})
+router.patch('/:id', personUpdate)
 
 //  Delete
-router.delete('/:id', (req,res) => {
-    res.json({msg :`${req.params.id} id'li Notu sil`})
-})
+router.delete('/:id', personDelete)
 
 module.exports = router;
