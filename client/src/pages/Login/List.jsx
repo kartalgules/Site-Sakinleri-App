@@ -1,43 +1,34 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import style from "../../styles/List.module.css";
 
 function List() {
+
+    const [persons,setPersons] = useState(null);
+
+    useEffect( ()=> {
+        const fetchData = async () => {
+            const res = await fetch('/api/persons')
+            .then(response => response.json())
+            .then(data => setPersons(data))
+            .cacth(err)(console.log(err))            
+        }
+    },[])
+
   return (
     <div className={style.container}>
       <div className={style.select}>
         <h2>Blok</h2>
-        {/* <select defaultValue="" onChange={handleBlockChange}>
-          <option value="" disabled>
-            Seçiniz
-          </option>
-          {uniqueBlocks.map((block, i) => (
-            <option value={block} key={i}>
-              {block}
-            </option>
-          ))}
-        </select> */}
       </div>
 
       <div>
         <div className={style.detail}>
           <div className={style.seated}>
-            {/* {selectedBlockKey == "" ? "" : <h2>Daire Sakini</h2>}
-            {selectedBlockKey == "" ? (
-              <div className={style.loading}>
-                <h1>Lütfen blok seçiniz...</h1>
-              </div>
-            ) : (
-              filterBloks.map((item, i) => (
-                <div
-                  className={style.seated_child}
-                  key={i}
-                  onClick={() => handleItemClick(i)}
-                >
-                  <span>{item.apartment}</span>
-                  <p>{item.fullName}</p>
+            {persons && persons.map( p => (
+                <div key={p._id}>
+                    <h3>{p.block}</h3>
+                    <h3>{p.apartment}</h3>
                 </div>
-              ))
-            )} */}
+            ))}
           </div>
         </div>
       </div>

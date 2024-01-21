@@ -1,15 +1,15 @@
-import { FirebaseProvider } from "./context/FirebaseContext.jsx";
 import ReactDOM from "react-dom/client";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import { PersonContextProvider } from "./context/PersonContext.jsx";
 import App from "./App.jsx";
+import "react-toastify/dist/ReactToastify.css";
 import style from "./styles/Main.module.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <FirebaseProvider>
+    <PersonContextProvider>
       <App />
-    </FirebaseProvider>
+    </PersonContextProvider>
     <ToastContainer position="top-right" autoClose={5000} theme="light" />
   </>
 );
