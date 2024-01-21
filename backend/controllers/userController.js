@@ -5,7 +5,7 @@ const loginUser = async (req,res) => {
 }
 
 const singUpUser = async (req,res) => {
-    res.json({mesaj:'SingUp işlemi gerçekleşti'})
+    req.body
 }
 
 module.exports = {
