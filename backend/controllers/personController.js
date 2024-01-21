@@ -5,10 +5,7 @@ const personSchema = require('../models/personModels');
 //  All Person Get Method
 const personGet = async (req,res) => {
     const persons = await personModels.find()
-    res.status(200).json(persons).sort({
-        block:1,
-        apartment:1
-    })
+    res.status(200).json(persons)
 }
 
 //  Create Method
