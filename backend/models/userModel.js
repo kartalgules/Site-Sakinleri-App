@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const Sema = mongoose.Schema();
+const Sema = mongoose.Schema;
 
-const userSchema = new Schema({
+const userSchema = new Sema({
     email:{
         type:String,
         required:true,
@@ -15,7 +15,7 @@ const userSchema = new Schema({
     }
 });
 
-userSchema.static.singup = async (email,password) => {
+userSchema.statics.singup = async function(email,password){
     const userControl = await this.findOne({email});
 
     if(userControl){
