@@ -41,4 +41,24 @@ userSchema.statics.singup = async function(email,password){
     return user;
 };
 
+userSchema.statics.login = async function(email,password){
+
+    if(!email || !password) {
+        throw Error('Fields cannot be empty.');
+    };
+
+    const user = await this.findOne({email});
+
+    if(!user){
+        throw Error('Email not found.');
+    };
+
+    const passwordControl = await bcrypt.compare(password,user.password);
+
+    if(!passwordControl){
+        throw Error('You entered an incorrect password.');
+    };
+
+    return user;
+}
 module.exports = mongoose.model('User',userSchema);
