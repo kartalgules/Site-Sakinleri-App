@@ -1,11 +1,10 @@
-import Login from "./pages/Login";
-import { useEffect, useState } from "react";
+import Coise from "./pages/Coise";
 
 function App() {
   
   return (
       <>
-        <Login  />
+        <Coise />
       </>
   );
 };

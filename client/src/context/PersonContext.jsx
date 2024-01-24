@@ -8,10 +8,10 @@ export const PersonReducer = (state,action) => {
             return  {
                 persons:[action.payload,...state.persons]
             }
-        // case 'PERSON':
-        //     return {
-        //         persons:action.payload
-        //     }
+        case 'PERSONS_GET':
+            return {
+                persons:action.payload
+            }
         default:
             return state
     }
