@@ -9,7 +9,8 @@ function Main() {
           <img src="../../../public/Logo.png" alt="logo" />
         </div>
         <div className={style.login}>
-          <NavLink to="/register">Üye Ol veya Giriş Yap</NavLink>
+          <NavLink to="/singup">Sing Up</NavLink>
+          <NavLink to="/login">Login</NavLink>
         </div>
       </div>
       <div className={style.section}>
@@ -25,6 +26,14 @@ function Main() {
             içerisinde kaydedip dilediğiniz zaman hızlı bir şekilde istediğiniz
             kişinin bilgilerine ulaşabileceksiniz.
           </p>
+          {/* <p>
+            Now, you don't need to create records in Excel or a notebook, browse
+            through them, and waste time searching.
+            <br />
+            Because now, with the Residents App, you can quickly record any
+            entry you want within a short time and access the information of the
+            person you need at any time.
+          </p> */}
         </div>
         <div className={style.scroll_button}>
           <NavLink to="/description">

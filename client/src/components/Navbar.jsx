@@ -5,10 +5,13 @@ import { toast } from "react-toastify";
 import { auth } from "../firebase";
 import style from '../styles/Navbar.module.css'
 import { useLogout } from '../../hooks/useLogout';
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Navbar() {
   
   const { logout } = useLogout();
+  const { user } = useAuthContext();
+
   const handleClick = () => {
     logout()
   }
@@ -16,7 +19,7 @@ function Navbar() {
   return (
     <nav>
       <div className={style.userDetail}>
-        <h3>Örnek Sitesi</h3>
+        <h3>User : {user.email}</h3>
         <p>Sakin Sayısı : 100 Kişi</p>
       </div>
       <div className={style.routes}>

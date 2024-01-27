@@ -1,0 +1,36 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import HomeLogin from "./Login/Home";
+import List from "./Login/List";
+import Add from "./Login/Add";
+import ExcelAdd from "./Login/ExcelAdd";
+import BulkDelete from "./Login/BulkDelete";
+import Edit from "./Login/Edit";
+import Settings from "./Login/Settings";
+import BadRequest from "./BadRequest";
+import style from "../styles/İsLogin.module.css";
+
+
+const İsLogin = () => {
+  return (
+    <div className={style.mainContainer}>
+      <Router>
+        <Navbar />
+        <article className={style.article}>
+          <Routes>
+            <Route path="/" exact="true" element={<HomeLogin />} />
+            <Route path="/list" element={<List />} />
+            <Route path="/add" element={<Add />} />
+            <Route path="/excelAdd" element={<ExcelAdd />} />
+            <Route path="/bulkDelete" element={<BulkDelete />} />
+            <Route path="/edit" element={<Edit />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/*" element={<BadRequest />} />
+          </Routes>
+        </article>
+      </Router>
+    </div>
+  );
+};
+
+export default İsLogin;

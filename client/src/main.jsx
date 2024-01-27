@@ -9,9 +9,9 @@ import style from "./styles/Main.module.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     <AuthContextProvider>
-    <PersonContextProvider>
-      <App />
-    </PersonContextProvider>
+      {/* <PersonContextProvider> */}
+        <App />
+      {/* </PersonContextProvider> */}
     </AuthContextProvider>
     <ToastContainer position="top-right" autoClose={5000} theme="light" />
   </>

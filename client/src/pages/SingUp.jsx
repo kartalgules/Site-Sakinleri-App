@@ -1,5 +1,5 @@
 import {useState} from "react";
-import { useSingUp } from './hooks/useSingUp'
+import { useSingUp } from '../../hooks/useSingUp'
 
 const SingUp = () => {
 
