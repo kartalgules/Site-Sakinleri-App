@@ -4,14 +4,13 @@ import { signOut } from "firebase/auth";
 import { toast } from "react-toastify";
 import { auth } from "../firebase";
 import style from '../styles/Navbar.module.css'
+import { useLogout } from '../../hooks/useLogout';
 
 function Navbar() {
   
-  const logoutFunc = () => {
-    toast.success('Çıkış işlemi gerçekleştiriliyor..');
-    setTimeout(() => {
-      signOut(auth) && navigate('/');
-    }, 5500);
+  const { logout } = useLogout();
+  const handleClick = () => {
+    logout()
   }
   
   return (
@@ -26,7 +25,7 @@ function Navbar() {
         <NavLink to="/excelAdd">Excel Toplu Ekle</NavLink>
         <NavLink to="/bulkDelete">Excel Toplu Sil</NavLink>
         <NavLink to="/settings">Ayarlar</NavLink>
-        <div className={style.logout} onClick={logoutFunc}>Çıkış</div>
+        <div className={style.logout} onClick={handleClick}>Çıkış</div>
       </div>
       <div className={style.copyright}>
           <p>Copyright by <strong>KARTAL GULES</strong></p>
