@@ -6,23 +6,25 @@ const {
     personUpdate, 
     personDelete 
 } = require('../controllers/personController');
+const authControl = require('../controllers/personController');
 
 //  Router Created
 const router = express.Router();
+router.use(authControl);
 
 //  All person get
-router.get('/',personGet)
+router.get('/',personGet);
 
 //  Create
-router.post('/', personCreate)
+router.post('/', personCreate);
 
 //  Read
-router.get('/:id', personRead)
+router.get('/:id', personRead);
 
 //  Update
-router.patch('/:id', personUpdate)
+router.patch('/:id', personUpdate);
 
 //  Delete
-router.delete('/:id', personDelete)
+router.delete('/:id', personDelete);
 
 module.exports = router;
