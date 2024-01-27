@@ -1,13 +1,16 @@
 import {useState} from "react";
+import { useSingUp } from './hooks/useSingUp'
 
 const SingUp = () => {
 
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
+    const { singup, loading, err } = useSingUp();
+
     const handleSubmit = async (e) => {
         e.preventDefault;
-
+        await singup(email,password)
     }
 
   return (
@@ -21,7 +24,8 @@ const SingUp = () => {
             <label>Password :</label>
             <input type="password" onChange={e => setPassword(e.target.value)} />
 
-            <button type='submit'>Sing Up</button>
+            <button disabled={loading} type='submit'>Sing Up</button>
+            {err && <div className="error">{err}</div>}
         </form>
     </>
   )

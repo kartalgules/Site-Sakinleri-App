@@ -7,6 +7,5 @@ export const usePersonContext = () => {
     if(!context) {
         throw new Error('context yüklenmedi')
     }
-
     return context;
 }
