@@ -20,11 +20,11 @@ const loginUser = async (req, res) => {
   }
 };
 
-const singUpUser = async (req, res) => {
+const signUpUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const user = await User.singup(email, password);
+    const user = await User.signup(email, password);
     const token = tokenCreate(user._id);
     res.status(200).json({ email, user });
   } catch (error) {
@@ -34,5 +34,5 @@ const singUpUser = async (req, res) => {
 
 module.exports = {
   loginUser,
-  singUpUser,
+  signUpUser,
 };

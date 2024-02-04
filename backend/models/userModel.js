@@ -16,7 +16,7 @@ const userSchema = new Sema({
     }
 });
 
-userSchema.statics.singup = async function(email,password){
+userSchema.statics.signup = async function(email,password){
 
     if(!email || !password){
         throw Error('Required field. Please fill out.')

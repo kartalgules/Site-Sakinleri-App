@@ -6,7 +6,7 @@ const {
     personUpdate, 
     personDelete 
 } = require('../controllers/personController');
-const authControl = require('../controllers/personController');
+const authControl = require('../middlewares/authControl');
 
 //  Router Created
 const router = express.Router();
