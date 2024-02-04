@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import HomeLogin from "./Login/Home";
@@ -9,9 +10,31 @@ import Edit from "./Login/Edit";
 import Settings from "./Login/Settings";
 import BadRequest from "./BadRequest";
 import style from "../styles/İsLogin.module.css";
-
+import { usePersonContext } from "../../hooks/usePersonContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const İsLogin = () => {
+  const { persons, dispatch } = usePersonContext();
+  const { user } = useAuthContext();
+
+  useEffect(() => {
+    const fetchPersons = async () => {
+      const response = await fetch("/api/persons", {
+        headers: {
+          'Authorization' : `Bearer ${user.token}`,
+        },
+      });
+      const json = await response.json();
+
+      if (response.ok) {
+        dispatch({ type: "PERSONS_GET", payload: json });
+      }
+    };
+    if (user) {
+      fetchPersons();
+    }
+  }, [dispatch,user]);
+
   return (
     <div className={style.mainContainer}>
       <Router>

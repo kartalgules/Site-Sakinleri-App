@@ -1,8 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { signOut } from "firebase/auth";
 import { toast } from "react-toastify";
-import { auth } from "../firebase";
 import style from '../styles/Navbar.module.css'
 import { useLogout } from '../../hooks/useLogout';
 import { useAuthContext } from "../../hooks/useAuthContext";

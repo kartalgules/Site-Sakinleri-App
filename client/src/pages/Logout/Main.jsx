@@ -9,7 +9,7 @@ function Main() {
           <img src="../../../public/Logo.png" alt="logo" />
         </div>
         <div className={style.login}>
-          <NavLink to="/singup">Sing Up</NavLink>
+          <NavLink to="/singup">Sign Up</NavLink>
           <NavLink to="/login">Login</NavLink>
         </div>
       </div>
