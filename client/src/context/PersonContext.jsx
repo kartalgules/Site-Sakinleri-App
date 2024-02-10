@@ -1,7 +1,9 @@
 import { createContext,useReducer } from "react";
 
+//  Person Context Created
 export const PersonContext = createContext();
 
+//  The methods for states and actions in the person reducer were created
 export const PersonReducer = (state,action) => {
     switch(action.type){
         case 'PERSON_CREATE':
@@ -17,6 +19,7 @@ export const PersonReducer = (state,action) => {
     }
 }
 
+//  Person Context Provider Created
 export const PersonContextProvider = ({children}) => {
 
     const [state,dispatch]=useReducer(PersonReducer,{
