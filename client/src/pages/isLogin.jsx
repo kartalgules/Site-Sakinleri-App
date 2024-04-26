@@ -4,7 +4,6 @@ import Navbar from "../components/Navbar";
 import HomeLogin from "./Login/Home";
 import List from "./Login/List";
 import Add from "./Login/Add";
-import ExcelAdd from "./Login/ExcelAdd";
 import BulkDelete from "./Login/BulkDelete";
 import Edit from "./Login/Edit";
 import Settings from "./Login/Settings";
@@ -21,7 +20,7 @@ const İsLogin = () => {
     const fetchPersons = async () => {
       const response = await fetch("/api/persons", {
         headers: {
-          'Authorization' : `Bearer ${user.token}`,
+          Authorization: `Bearer ${user.token}`,
         },
       });
       const json = await response.json();
@@ -33,7 +32,7 @@ const İsLogin = () => {
     if (user) {
       fetchPersons();
     }
-  }, [dispatch,user]);
+  }, [dispatch, user]);
 
   return (
     <div className={style.mainContainer}>
